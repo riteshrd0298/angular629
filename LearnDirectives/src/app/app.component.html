@@ -1,0 +1,57 @@
+<body [ngClass]="{'highlight':isHighlight}" >
+
+  <h2>ngIf example</h2>
+<button *ngIf="data">Sign In</button><br /><br />
+
+<button *ngIf="!data">Sign Up</button>
+
+<h2>ngFor example</h2>
+<h3>Example 1</h3>
+<ul *ngFor="let i of numbers">
+  <li>{{ i }}</li>
+</ul>
+
+<h2>ngFor example</h2>
+<h3>Example 2</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tbody *ngFor="let std of students">
+    <tr>
+      <td>{{ std.id }}</td>
+      <td>{{ std.name }}</td>
+      <td>{{ std.age }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'yellow'">yellow color</p>
+  <p *ngSwitchCase="'white'">white color</p>
+  <p *ngSwitchDefault>Default color</p>
+</div>
+
+<h2>Attribute Directives</h2>
+
+<!-- ngClass -->
+<button (click)="highlightOnOff()" >Highlight On/OFF</button>
+
+<label class="switch">
+  <input type="checkbox" checked (click)="highlightOnOff()">
+  <span class="slider round"></span>
+</label>
+
+
+<!-- ngStyle -->
+
+<div [ngStyle]="{'font-size':fontSize}">
+  This is my text
+</div>
+
+<button (click)="increase()" >Increase</button>
+<button (click)="decrease()" >Increase</button>
+
+</body>
