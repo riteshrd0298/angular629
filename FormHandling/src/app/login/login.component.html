@@ -1,0 +1,15 @@
+<h3>Way 1</h3>
+<form #loginForm="ngForm" (ngSubmit)="xyz(loginForm)">
+  Username: <input type="text" name="username" ngModel /><br /><br />
+  Password: <input type="text" name="password" ngModel /><br /><br />
+  <button type="submit">Login</button>
+</form>
+
+<h3>Way 2</h3>
+<form (ngSubmit)="abc()">
+  Username:
+  <input type="text" name="username" [(ngModel)]="username" /><br /><br />
+  Password:
+  <input type="text" name="password" [(ngModel)]="password" /><br /><br />
+  <button type="submit">Login</button>
+</form>
