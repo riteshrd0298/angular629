@@ -1,3 +1,25 @@
+<h3>Select your BirthDate</h3>
+<input type="date" name="birtDate" [(ngModel)]="birtDate" />
+<div *ngIf="birtDate">
+  {{ birtDate }}
+  {{ birtDate | date : "fullDate" }}<br />
+  {{ birtDate | date : "short" }} <br />
+  {{ birtDate | date : "dd/MM/yyyy" }} <br />
+  <h2>My age {{ birtDate | date : "dd/MM/yyyy" | age }}</h2>
+</div>
+
+<br />
+
+<h3>{{1234.45 | number:'1.0-0'}}</h3>
+
+{{ gender | i18nSelect: genderMapping }}
+
+
+{{ "angular pipe" | uppercase }} <br />
+{{ 123.34 | currency : "INR" : "symbol" }} <br />
+
+{{ 1234.5678 | number : "2.2-2" }}
+
 <h3>Way 1</h3>
 <form #loginForm="ngForm" (ngSubmit)="xyz(loginForm)">
   Username: <input type="text" name="username" ngModel /><br /><br />

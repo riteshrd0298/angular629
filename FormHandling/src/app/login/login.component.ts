@@ -6,6 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+
+  birtDate:any;
+
+  genderMapping = {
+    'male': 'He',
+    'female': 'She',
+    'other': 'They'
+  };
+
+gender='male'
+
   username: any = '';
   password: any = '';
 
