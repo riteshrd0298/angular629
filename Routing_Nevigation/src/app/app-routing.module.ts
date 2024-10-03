@@ -5,23 +5,27 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 
+
 const routes: Routes = [
   {
     path: '',
-    component: MenuComponent,
+    component: MenuComponent
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'register',
-    component: RegisterComponent,
+    component: RegisterComponent
   },
 
   {
     path:'home', component:HomeComponent
   }
+  
+  
+
 ];
 
 @NgModule({

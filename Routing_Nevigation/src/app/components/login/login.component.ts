@@ -15,7 +15,7 @@ export class LoginComponent {
   }
 
   login() {
-    if (this.username === 'ram' && this.password === '123') {
+    if (this.username === 'ritesh' && this.password === '3366') {
       // nevigate to home
       this.r.navigate(['/home']);
     } else {

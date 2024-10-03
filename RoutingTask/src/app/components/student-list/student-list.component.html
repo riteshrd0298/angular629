@@ -1,0 +1,22 @@
+<h2 style="text-align: center; color: rgb(177, 12, 12);">List of Students</h2>
+
+<p>Clik on Student Name to show Student Details</p>
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 8px;">Student Name</th>
+      <th style="border: 1px solid black; padding: 8px;">Batch Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let studentItem of student">
+      <!-- Student name clickable and navigates to details page -->
+      <td style="border: 1px solid black; padding: 8px;">
+        <a [routerLink]="['/student-profile', studentItem.id]" style="text-decoration: none;color: black;">{{ studentItem.name }}</a>
+      </td>
+      <td style="border: 1px solid black; padding: 8px;">
+        {{ studentItem.batch_number }}
+      </td>
+    </tr>
+  </tbody>
+</table>

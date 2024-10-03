@@ -1,0 +1,10 @@
+<h2 style="text-align: center; color: rgb(177, 12, 12);">Batch Details</h2>
+
+<div *ngIf="batches">
+  <p><strong>Batch Id:</strong> {{ batches.id }}</p>
+  <p><strong>Batch Name:</strong> {{ batches.batch_name }}</p>
+</div>
+
+<div *ngIf="!batches">
+  <p>Student not found!</p>
+</div>
