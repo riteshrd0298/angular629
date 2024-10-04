@@ -1,0 +1,80 @@
+<div class="student-form">
+  <h2>Student Information Form</h2>
+  <form (ngSubmit)="onSubmit(feedbackForm)" #feedbackForm="ngForm" novalidate>
+    <!-- Student Name -->
+    <div class="form-group">
+      <label for="studentName">Student Name:</label>
+      <input
+        id="studentName"
+        type="text"
+        [(ngModel)]="studentName"
+        name="studentName"
+        required
+        #nameField="ngModel"
+      />
+      <div *ngIf="nameField.invalid && nameField.touched" class="error">
+        Student Name is required.
+      </div>
+    </div>
+  
+    <!-- Batch Number -->
+    <div class="form-group">
+      <label for="batchNumber">Batch Number:</label>
+      <input
+        id="batchNumber"
+        type="number"
+        [(ngModel)]="batchNumber"
+        name="batchNumber"
+        required
+        #batchField="ngModel"
+      />
+      <div *ngIf="batchField.invalid && batchField.touched" class="error">
+        Batch Number is required.
+      </div>
+    </div>
+  
+    <!-- Gender -->
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select name="gender" id="gender" [(ngModel)]="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+  
+    <!-- Birth Date -->
+    <div class="form-group">
+      <label for="birthDate">Birth Date:</label>
+      <input type="date" name="birthDate" [(ngModel)]="birthDate" />
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn" [disabled]="feedbackForm.invalid">Submit</button>
+  </form>
+  
+  <!-- Submitted Feedbacks -->
+  <h3>Submitted Student Information</h3>
+
+  <div *ngIf="studentEntries.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Batch Number</th>
+          <th>Gender</th>
+          <th>Birth Date</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of studentEntries">
+          <td>{{ entry.gender | i18nSelect:genderMapping }} {{ entry.studentName }}</td>
+          <td>{{ entry.batchNumber }}</td>
+          <td>{{ entry.gender }}</td>
+          <td>{{ entry.birthDate }}</td>
+          <td>{{ entry.birthDate | age:birthDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
